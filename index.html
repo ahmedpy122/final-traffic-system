@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>CRUD</title>
+  </head>
+  <body>
+    <button onclick="logout()" class="logout-btn">تسجيل الخروج</button>
+    <div class="crud">
+      <div class="header">
+        <h2>قاعدة بيانات</h2>
+        <p>تسجيل السيارات المارة</p>
+      </div>
+      <div class="body">
+        <input type="number" id="title" placeholder="رقم السيارة" />
+        <input type="letters" id="letters" placeholder="حروف السيارة" />
+        <input type="text" id="category" placeholder="محافظة السيارة" />
+        <button id="submit">احفظ</button>
+      </div>
+      <div class="output">
+        <div class="search-controls">
+          <input onkeyup="searchForProducts()" id="search" placeholder="ابحث" />
+        </div>
+        <div class="search-btns">
+          <button onclick="searchBtnAction(this.id)" id="title-search">
+            ابحث برقم السيارة
+          </button>
+          <button onclick="searchBtnAction(this.id)" id="category-search">
+            ابحث باستخدام المحافظة
+          </button>
+        </div>
+        <table>
+          <tr>
+            <th>عدد السيارات</th>
+            <th>رقم السيارة</th>
+            <th>حروف السيارة</th>
+            <th>المحافظة</th>
+            <th>عدل</th>
+          </tr>
+          <tbody id="output"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
