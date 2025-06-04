@@ -54,7 +54,7 @@ async function creatProd() {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:3000/api/v1/cars", {
+    const response = await fetch("https://car-traffic.onrender.com/api/v1/cars", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ async function showProd() {
   if (!checkAuth()) return;
 
   try {
-    const response = await fetch("http://127.0.0.1:3000/api/v1/cars", {
+    const response = await fetch("https://car-traffic.onrender.com/api/v1/cars", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -140,7 +140,7 @@ async function updateExistingProd() {
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:3000/api/v1/cars/${productsArr[tmp]._id}`,
+      `https://car-traffic.onrender.com/api/v1/cars/${productsArr[tmp]._id}`,
       {
         method: "PATCH",
         headers: {
